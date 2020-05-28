@@ -16,51 +16,54 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
-import { Person, Recent } from '@c'
-import { List } from './components'
+import { mapMutations, mapState } from "vuex";
+import { Person, Recent } from "@c";
+import { List } from "./components";
 export default {
   components: { Person, Recent, List },
   data() {
     return {
       smallWidth: 400
-    }
+    };
   },
   methods: {
-    ...mapMutations(['setShowRightDom']),
+    ...mapMutations(["setShowRightDom"]),
     watchClientWidth() {
-      let clientWidth = document.body.clientWidth
-      this.setShowRightDom(clientWidth < this.smallWidth)
+      let clientWidth = document.body.clientWidth;
+      this.setShowRightDom(clientWidth < this.smallWidth);
     },
     handleClientWidth() {
-      this.watchClientWidth()
-      window.addEventListener('resize', () => {
-        this.watchClientWidth()
-      })
+      this.watchClientWidth();
+      window.addEventListener("resize", () => {
+        this.watchClientWidth();
+      });
     }
   },
   mounted() {
-    this.handleClientWidth()
+    this.handleClientWidth();
   },
   computed: {
-    ...mapState(['isShowRightDom'])
+    ...mapState(["isShowRightDom"])
   }
-}
+};
 </script>
 
 <style lang='scss' scoped>
 .home {
   display: flex;
   .left-box {
+    background-color: #fff;
     border: 1px solid #000;
     padding: 20px;
   }
   .middle-box {
     flex: 1;
+    background-color: #fff;
     padding: 20px;
     border: 1px solid #000;
   }
-  .mirigthddle-box {
+  .rigth-box {
+    background-color: #fff;
     border: 1px solid #000;
     padding: 20px;
   }

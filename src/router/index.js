@@ -14,7 +14,22 @@ const routes = [
         path: '/index',
         name: 'home',
         component: () => import(/* webpackChunkName: "home" */ '../views/home')
-      }
+      },
+      {
+        path: '/article',
+        name: 'article',
+        component: () => import(/* webpackChunkName: "article" */ '../views/article')
+      },
+      {
+        path: '/categories',
+        name: 'categories',
+        component: () => import(/* webpackChunkName: "categories" */ '../views/categories')
+      },
+      {
+        path: '/about',
+        name: 'about',
+        component: () => import(/* webpackChunkName: "about" */ '../views/about')
+      },
     ]
   }
 ]

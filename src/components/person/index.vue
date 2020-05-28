@@ -12,6 +12,7 @@ export default {}
 
 <style lang='scss' scoped>
 .person-wrap {
+  
   border: 1px solid #000;
 }
 </style>
