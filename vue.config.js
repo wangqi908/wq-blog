@@ -1,4 +1,9 @@
 'use strict'
+const path = require('path')
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 const cdn = {
   css: [],
   js: [
@@ -39,7 +44,10 @@ module.exports = {
   chainWebpack: config => {
     config.plugins.delete('preload') // 移除 prefetch 插件
     config.plugins.delete('prefetch') // 移除 preload 插件
-
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('@a', resolve('src/assets'))
+      .set('@c', resolve('src/components'))
     // 生产环境注入cdn
     config.plugin('html').tap(args => {
       args[0].cdn = cdn
