@@ -1,32 +1,44 @@
 <template>
   <Card class="head">
-    <h1 class="logo">
-      <img src="@a/imgs/avatar.png" alt="博客" />
-    </h1>
-    <Menu />
+    <div class="left-box">
+      <h1 class="logo">
+        <img src="@a/imgs/avatar.png" alt="博客" />
+      </h1>
+      <Menu />
+    </div>
+    <div class="right-box">
+      <Link />
+    </div>
   </Card>
 </template>
 
 <script>
-import { Menu } from "./components";
+import { Menu, Link } from "./components";
 export default {
-  components: { Menu }
+  components: { Menu, Link }
 };
 </script>
 
 <style lang='scss' scoped>
 .head {
-  border: 1px solid #000;
+  padding: 0 80px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 50px;
   background-color: #fff;
+  margin-bottom: 20px;
+}
+.left-box {
+  display: flex;
+  align-items: center;
 }
 .logo {
-  height: 50px;
+  height: 30px;
+  margin-right: 10px;
   img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
   }
 }
 </style>

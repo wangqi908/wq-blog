@@ -10,6 +10,5 @@ export default {}
 
 <style>
 .recent-wrap {
-  border: 1px solid #000;
 }
 </style>

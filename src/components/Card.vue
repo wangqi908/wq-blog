@@ -9,23 +9,26 @@ export default {
   data() {
     return {
       show: false
-    }
+    };
   },
   mounted() {
-    this.show = true
+    this.show = true;
   }
-}
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 .card {
+  padding: 10px;
+  background-color: #fff;
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(1, 0.6);
+  box-shadow: $shadow;
   transform-origin: center top;
 }
 .scale {
-  transform: scale(1);
+  transform: scale(1, 1);
   opacity: 1;
-  transition: all 0.5s;
+  transition: all 0.6s;
 }
 </style>

@@ -25,7 +25,7 @@ export default {
 }
 .item {
   line-height: 50px;
-  padding: 0 10px;
+  padding: 0 16px;
   color: $mainText;
   font-size: 14px;
   &:hover {
@@ -38,5 +38,6 @@ export default {
 }
 .router-link-active{
   background-color: $bgc;
+    color: $active;
 }
 </style>

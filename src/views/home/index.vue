@@ -52,19 +52,13 @@ export default {
 .home {
   display: flex;
   .left-box {
-    background-color: #fff;
-    border: 1px solid #000;
     padding: 20px;
   }
   .middle-box {
     flex: 1;
-    background-color: #fff;
     padding: 20px;
-    border: 1px solid #000;
   }
   .rigth-box {
-    background-color: #fff;
-    border: 1px solid #000;
     padding: 20px;
   }
 }
