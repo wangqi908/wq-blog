@@ -22,7 +22,7 @@
           <a href="https://github.com/wangqi908" target="_blank">
             <div
               class="article-title"
-            >Geng StartGeng Started with IcacarusGeng Started with IcacarusGeng Started with IcacarusGeng Started with IcacarusGeng Started with IcacarusGeng Started with IcacarusGeng Started with Icacarused with Icacarus</div>
+            >Geng StartGeng Started with IcacarusGeng Started wng Started with IcacarusGeng Started with Icacarused with Icacarus</div>
           </a>
         </div>
       </div>

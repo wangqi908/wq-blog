@@ -1,6 +1,7 @@
 <template>
   <div class="left-box">
     <Person />
+
     <Recent v-if="$store.state.isShowRightDom" />
   </div>
 </template>

@@ -1,1 +1,1 @@
-export { default as List } from './List'
+export { default as ArticleItem } from './ArticleItem'

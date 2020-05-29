@@ -1,7 +1,9 @@
 <template>
-  <div :class="['card',show?'scale':'']">
-    <slot></slot>
-  </div>
+  <transition name="scale">
+    <div v-if="show" class="card">
+      <slot></slot>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -13,6 +15,9 @@ export default {
   },
   mounted() {
     this.show = true
+  },
+  destroyed() {
+    this.show = false
   }
 }
 </script>
@@ -21,14 +26,19 @@ export default {
 .card {
   padding: 20px;
   background-color: #fff;
-  opacity: 0;
-  transform: scale(1, 0.2);
   box-shadow: $shadow;
-  transform-origin: center top;
 }
-.scale {
+
+.scale-enter-active,
+.scale-leave-active {
   transform: scale(1, 1);
   opacity: 1;
   transition: all 0.6s;
+}
+.scale-enter,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(1, 0.2);
+  transform-origin: center top;
 }
 </style>
