@@ -4,24 +4,24 @@
     <div class="list-box">
       <div class="item">
         <a href="https://github.com/wangqi908" target="_blank">
-          <img class="article-pic" src="@a/imgs/avatar.png" alt="博客" />
+          <img class="post-pic" src="@a/imgs/avatar.png" alt="博客" />
         </a>
         <div class="content">
           <div class="time">2020-04-01</div>
           <a href="https://github.com/wangqi908" target="_blank">
-            <div class="article-title">Geng Started with Icacarus</div>
+            <div class="post-title">Geng Started with Icacarus</div>
           </a>
         </div>
       </div>
       <div class="item">
         <a href="https://github.com/wangqi908" target="_blank">
-          <img class="article-pic" src="@a/imgs/avatar.png" alt="博客" />
+          <img class="post-pic" src="@a/imgs/avatar.png" alt="博客" />
         </a>
         <div class="content">
           <div class="time">2020-04-01</div>
           <a href="https://github.com/wangqi908" target="_blank">
             <div
-              class="article-title"
+              class="post-title"
             >Geng StartGeng Started with IcacarusGeng Started wng Started with IcacarusGeng Started with Icacarused with Icacarus</div>
           </a>
         </div>
@@ -53,7 +53,7 @@ export default {}
       border: 0;
     }
   }
-  .article-pic {
+  .post-pic {
     width: 60px;
     height: 60px;
     margin-right: 10px;
@@ -67,7 +67,7 @@ export default {}
     color: $mainText;
     margin-bottom: 6px;
   }
-  .article-title {
+  .post-title {
     color: $titleText;
     font-size: 14px;
   }

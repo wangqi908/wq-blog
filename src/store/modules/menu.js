@@ -10,7 +10,7 @@ export default {
       {
         id: 1,
         title: '文章',
-        path: '/article'
+        path: '/post'
       },
       {
         id: 2,

@@ -1,7 +1,7 @@
 <template>
   <Card class="item">
     <a href="https://github.com/wangqi908" class="pic">
-      <img class="article-pic" src="@a/imgs/pic.png" alt="博客" />
+      <img class="post-pic" src="@a/imgs/pic.png" alt="博客" />
     </a>
     <div class="content">
       <div class="time">2020-04-01</div>
@@ -18,7 +18,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'postItem'
+}
 </script>
 
 <style lang='scss' scoped>

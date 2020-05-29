@@ -38,14 +38,13 @@ export default {
         'undo', // 撤销
         'redo' // 重复
       ],
-      editorContent: ''
+      editor: ''
     }
   },
   mounted() {
     let editor = new E(this.$refs.editorElem)
     // 编辑器的事件，每次改变会获取其html内容
     editor.customConfig.onchange = html => {
-      console.log(html)
       this.$emit('change', html)
     }
     editor.customConfig.menus = this.menus
@@ -55,6 +54,15 @@ export default {
     editor.create() // 创建富文本实例
 
     editor.txt.html(this.value)
+
+    this.editor = editor
+  },
+  watch: {
+    value(val) {
+      if (val === '') {
+        this.editor.txt.clear()
+      }
+    }
   }
 }
 </script>
