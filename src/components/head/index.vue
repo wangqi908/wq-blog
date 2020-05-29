@@ -13,15 +13,16 @@
 </template>
 
 <script>
-import { Menu, Link } from "./components";
+import { Menu, Link } from './components'
 export default {
   components: { Menu, Link }
-};
+}
 </script>
 
 <style lang='scss' scoped>
 .head {
-  padding: 0 80px;
+  // padding: 0 80px;
+  @extend %page-common;
   display: flex;
   align-items: center;
   justify-content: space-between;

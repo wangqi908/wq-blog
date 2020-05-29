@@ -9,12 +9,12 @@ export default {
   data() {
     return {
       show: false
-    };
+    }
   },
   mounted() {
-    this.show = true;
+    this.show = true
   }
-};
+}
 </script>
 
 <style lang='scss'>
@@ -22,7 +22,7 @@ export default {
   padding: 10px;
   background-color: #fff;
   opacity: 0;
-  transform: scale(1, 0.6);
+  transform: scale(1, 0.2);
   box-shadow: $shadow;
   transform-origin: center top;
 }

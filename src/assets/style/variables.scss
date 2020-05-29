@@ -1,6 +1,14 @@
+// 颜色
 $bgc: #f9f7f7;
 $gray: #dbe2ef;
 $active: #3273dc;
 $deep: #112d4e;
-$mainText:  #4a4a4a;
+$mainText: #4a4a4a;
 $shadow: 0px 2px 12px 0px rgba(180, 180, 180, 0.5);
+// 版心
+%page-common {
+  padding: 0 80px;
+  @media (max-width: 550px) {
+    padding: 0 20px;
+  }
+}

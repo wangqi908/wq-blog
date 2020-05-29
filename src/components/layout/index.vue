@@ -1,7 +1,9 @@
 <template>
   <div>
     <Head />
-    <router-view />
+    <div class="layout">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -11,3 +13,8 @@ export default {
   components: { Head }
 }
 </script>
+<style scoped lang='scss'>
+.layout {
+  @extend %page-common;
+}
+</style>
