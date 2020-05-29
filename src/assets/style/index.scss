@@ -151,7 +151,7 @@ body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  background-color: $bgc;
 }
 
 .flex-center {
@@ -179,8 +179,4 @@ body {
 }
 #nprogress .bar {
   background: #e3f8ff !important; //自定义颜色
-}
-
-#app{
-  background-color: $bgc;
 }

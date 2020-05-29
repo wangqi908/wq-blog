@@ -29,6 +29,7 @@ export default {
   color: $mainText;
   font-size: 14px;
   flex-shrink: 0;
+  transition: all 0.4s;
   &:hover {
     background-color: $bgc;
     color: $active;

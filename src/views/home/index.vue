@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <ArticleItem />
+    <ArticleItem />
+    <ArticleItem />
+    <ArticleItem />
   </div>
 </template>
 
@@ -10,9 +13,3 @@ export default {
   components: { ArticleItem }
 }
 </script>
-
-<style lang='scss' scoped>
-.home {
-  border: 1px solid #000;
-}
-</style>
