@@ -5,15 +5,16 @@
       <p class="tip">© 2020 Powered by WangQi</p>
     </div>
     <div class="right-box">
-      <a class="icon-link" href="https://github.com/wangqi908" target="_blank">
-        <span class="iconfont icon-github"></span>
-      </a>
+      <IconLink />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import IconLink from '../iconLink'
+export default {
+  components: { IconLink }
+}
 </script>
 
 <style lang='scss' scoped>

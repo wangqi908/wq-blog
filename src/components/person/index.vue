@@ -4,26 +4,19 @@
     <p class="title">王琦</p>
     <p class="sub-title">Web Developer</p>
     <p class="sub-title">
-      <span class="iconfont icon-github"></span>
+      <span class="iconfont icon-position"></span>
       <span>Shang Hai</span>
     </p>
     <a class="btn" href="https://github.com/wangqi908" target="_blank">Follow</a>
-    <div class="icon-box">
-      <a class="icon-link" href="https://github.com/wangqi908" target="_blank">
-        <span class="iconfont icon-github"></span>
-      </a>
-      <a class="icon-link" href="https://github.com/wangqi908" target="_blank">
-        <span class="iconfont icon-github"></span>
-      </a>
-      <a class="icon-link" href="https://github.com/wangqi908" target="_blank">
-        <span class="iconfont icon-github"></span>
-      </a>
-    </div>
+    <IconLink />
   </Card>
 </template>
 
 <script>
-export default {}
+import IconLink from '../iconLink'
+export default {
+  components: { IconLink }
+}
 </script>
 
 <style lang='scss' scoped>
@@ -67,12 +60,6 @@ export default {}
     }
     &:active {
       background-color: $activeActive;
-    }
-  }
-  .icon-box {
-    margin-top: 10px;
-    .icon-link {
-      padding: 10px;
     }
   }
 }
