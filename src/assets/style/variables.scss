@@ -7,11 +7,12 @@ $activeActive: #2260c4;
 $deep: #112d4e;
 $mainText: #4a4a4a;
 $titleText: #363636;
+$small-width: 500px;
 $shadow: 0px 2px 12px 0px rgba(180, 180, 180, 0.5);
 // 版心
 %page-common {
   padding: 0 80px;
-  @media (max-width: 750px) {
+  @media (max-width: 950px) {
     padding: 0 20px;
   }
 }

@@ -34,6 +34,7 @@ export default {}
   flex-direction: column;
   margin-bottom: 20px;
   border-radius: 4px;
+  min-width: 200px;
   .avatar {
     width: 100px;
     height: 100px;

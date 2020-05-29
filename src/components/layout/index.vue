@@ -19,7 +19,7 @@ export default {
   components: { Head, LeftSide, RightSide },
   data() {
     return {
-      smallWidth: 750
+      smallWidth: 950
     }
   },
   methods: {
@@ -53,7 +53,7 @@ export default {
     flex: 1;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: $small-width) {
   .layout {
     display: block;
   }

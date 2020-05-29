@@ -13,12 +13,6 @@ export default {
 
 <style scoped lang='scss'>
 .rigth-box {
-  border: 1px solid #000;
   margin-left: 10px;
-}
-@media (max-width: 400px) {
-  .rigth-box {
-    margin-right: 0;
-  }
 }
 </style>

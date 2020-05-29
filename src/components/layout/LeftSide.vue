@@ -16,7 +16,7 @@ export default {
 .left-box {
   margin-right: 10px;
 }
-@media (max-width: 400px) {
+@media (max-width: $small-width) {
   .left-box {
     margin-right: 0;
   }
