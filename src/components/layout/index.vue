@@ -12,13 +12,14 @@
 <script>
 import { mapMutations } from 'vuex'
 import { Head } from '@c'
+import { throttle } from '@u'
 import LeftSide from './LeftSide'
 import RightSide from './RightSide'
 export default {
   components: { Head, LeftSide, RightSide },
   data() {
     return {
-      smallWidth: 400
+      smallWidth: 750
     }
   },
   methods: {
@@ -29,9 +30,12 @@ export default {
     },
     handleClientWidth() {
       this.watchClientWidth()
-      window.addEventListener('resize', () => {
-        this.watchClientWidth()
-      })
+      window.addEventListener(
+        'resize',
+        throttle(() => {
+          this.watchClientWidth()
+        }, 100)
+      )
     }
   },
   mounted() {
