@@ -15,6 +15,7 @@ import { LeftSide, RightSide } from './components'
 import { throttle } from '@u'
 
 export default {
+  name: 'home',
   components: { LeftSide, RightSide, ArticleList },
   data() {
     return {

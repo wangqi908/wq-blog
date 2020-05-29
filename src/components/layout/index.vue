@@ -12,6 +12,7 @@
 import { Head, Foot } from '@c'
 
 export default {
+  name: 'layout',
   components: { Head, Foot }
 }
 </script>

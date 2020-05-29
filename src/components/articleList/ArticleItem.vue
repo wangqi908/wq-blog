@@ -26,7 +26,7 @@ export default {}
   padding: 0;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   .pic {
     width: 100%;
     img {
@@ -35,7 +35,7 @@ export default {}
     }
   }
   .content {
-    padding: 10px;
+    padding: 20px 10px;
   }
   .time {
     margin: 10px 0;
