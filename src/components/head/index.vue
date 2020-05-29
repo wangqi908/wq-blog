@@ -43,7 +43,7 @@ export default {
     height: 30px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: $small-width) {
   .logo,
   .right-box {
     display: none;
