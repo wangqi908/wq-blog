@@ -19,7 +19,7 @@ export default {
 
 <style lang='scss'>
 .card {
-  padding: 10px;
+  padding: 20px;
   background-color: #fff;
   opacity: 0;
   transform: scale(1, 0.2);
