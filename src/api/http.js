@@ -3,6 +3,7 @@
 函数返回的是promise 对象
 */
 import axios from 'axios'
+import store from '@/store'
 const { PROD_URL } = require('../../config')
 export const baseURL = process.env.NODE_ENV === 'development' ? '/api' : `${PROD_URL}api/`
 
@@ -10,6 +11,26 @@ export const timeout = 20000 // 设置超时时间
 
 axios.defaults.baseURL = baseURL
 axios.defaults.timeout = timeout
+
+axios.interceptors.request.use(
+  config => {
+    const token = store.state.token
+    if (token) config.headers.Authorization = `Bearer ${token}`
+    return config
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
+
+axios.interceptors.response.use(
+  response => {
+    return response
+  },
+  error => {
+    return Promise.reject(error)
+  }
+)
 
 export default function req(url, params = {}, method = 'GET', arr) {
   method = method.toLowerCase()

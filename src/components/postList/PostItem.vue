@@ -4,14 +4,9 @@
       <img class="post-pic" src="@a/imgs/pic.png" alt="博客" />
     </a>
     <div class="content">
-      <div class="time">2020-04-01</div>
-      <a href="https://github.com/wangqi908" class="title">Icarus User Guide - Configuring the Theme</a>
-      <p class="intro">
-        Icarus’ default theme configuration file is themes/icarus/_config.yml.
-        It defines the global layout and style settings of the theme and controls external features such as plugins and widgets.
-        This article details the general configurations of the theme.
-        It also explains what configuration files are used and how Icarus generate and validate these configurations.
-      </p>
+      <div class="time">{{info.createTime}}</div>
+      <a href="https://github.com/wangqi908" class="title">{{info.title}}</a>
+      <div class="intro" v-html="info.content"></div>
       <a href="https://github.com/wangqi908" class="btn">阅读全文</a>
     </div>
   </Card>
@@ -19,7 +14,15 @@
 
 <script>
 export default {
-  name: 'postItem'
+  name: 'postItem',
+  props: {
+    info: {
+      type: Object
+    }
+  },
+  created() {
+    console.log(this.info)
+  }
 }
 </script>
 

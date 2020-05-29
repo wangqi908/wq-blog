@@ -48,6 +48,7 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           alert('submit!')
+          console.log(JSON.stringify(this.ruleForm))
         } else {
           console.log('error submit!!')
           return false

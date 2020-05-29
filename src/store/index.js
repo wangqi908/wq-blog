@@ -1,6 +1,7 @@
 // import Vue from "vue";
 import Vuex from 'vuex'
 import menu from './modules/menu'
+import post from './modules/post'
 // Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -13,5 +14,5 @@ export default new Vuex.Store({
     }
   },
   actions: {},
-  modules: {menu}
+  modules: { menu, post }
 })

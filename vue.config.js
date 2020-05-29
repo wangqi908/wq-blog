@@ -49,6 +49,7 @@ module.exports = {
       .set('@a', resolve('src/assets'))
       .set('@c', resolve('src/components'))
       .set('@u', resolve('src/utils'))
+      .set('@api', resolve('src/api'))
     // 生产环境注入cdn
     config.plugin('html').tap(args => {
       args[0].cdn = cdn
