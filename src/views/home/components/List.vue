@@ -18,5 +18,6 @@ export default {}
 <style>
 .list-wrap {
   border: 1px solid #000;
+  width: 100%;
 }
 </style>

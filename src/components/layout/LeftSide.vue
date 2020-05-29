@@ -1,0 +1,20 @@
+<template>
+  <div class="left-box">
+    <Person />
+    <Recent v-if="$store.state.isShowRightDom" />
+  </div>
+</template>
+
+<script>
+import { Person, Recent } from '@c'
+export default {
+  components: { Person, Recent }
+}
+</script>
+
+<style scoped lang='scss'>
+.left-box {
+  border: 1px solid #000;
+  margin-right: 10px;
+}
+</style>

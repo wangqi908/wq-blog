@@ -42,4 +42,13 @@ export default {
     height: 30px;
   }
 }
+@media (max-width: 400px) {
+  .logo,
+  .right-box {
+    display: none;
+  }
+  .head {
+    justify-content: center;
+  }
+}
 </style>
