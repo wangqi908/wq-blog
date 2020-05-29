@@ -17,4 +17,9 @@ export default {
   border: 1px solid #000;
   margin-right: 10px;
 }
+@media (max-width: 400px) {
+  .left-box {
+    margin-right: 0;
+  }
+}
 </style>

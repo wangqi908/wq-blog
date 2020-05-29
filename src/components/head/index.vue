@@ -29,6 +29,7 @@ export default {
   height: 50px;
   background-color: #fff;
   margin-bottom: 20px;
+  overflow: auto;
 }
 .left-box {
   display: flex;

@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState("menu", ["menuList"])
+    ...mapState('menu', ['menuList'])
   }
-};
+}
 </script>
 
 <style lang='scss' scoped>
@@ -28,6 +28,7 @@ export default {
   padding: 0 16px;
   color: $mainText;
   font-size: 14px;
+  flex-shrink: 0;
   &:hover {
     background-color: $bgc;
     color: $active;
@@ -36,8 +37,8 @@ export default {
     background-color: #ebebeb;
   }
 }
-.router-link-active{
+.router-link-active {
   background-color: $bgc;
-    color: $active;
+  color: $active;
 }
 </style>

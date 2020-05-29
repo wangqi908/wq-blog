@@ -53,4 +53,9 @@ export default {
     flex: 1;
   }
 }
+@media (max-width: 400px) {
+  .layout {
+    display: block;
+  }
+}
 </style>
