@@ -2,10 +2,7 @@
   <div class="home">
     <LeftSide />
     <div class="list">
-      <ArticleItem />
-      <ArticleItem />
-      <ArticleItem />
-      <ArticleItem />
+      <ArticleList />
     </div>
     <RightSide />
   </div>
@@ -13,11 +10,12 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import { LeftSide, RightSide, ArticleItem } from './components'
+import { ArticleList } from '@c'
+import { LeftSide, RightSide } from './components'
 import { throttle } from '@u'
 
 export default {
-  components: { LeftSide, RightSide, ArticleItem },
+  components: { LeftSide, RightSide, ArticleList },
   data() {
     return {
       smallWidth: 950

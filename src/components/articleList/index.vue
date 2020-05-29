@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <ArticleItem />
     <ArticleItem />
     <ArticleItem />
@@ -8,8 +8,11 @@
 </template>
 
 <script>
-import { ArticleItem } from './components'
+import ArticleItem from './ArticleItem'
 export default {
   components: { ArticleItem }
 }
 </script>
+
+<style>
+</style>
