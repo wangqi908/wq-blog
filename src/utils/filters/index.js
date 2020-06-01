@@ -1,4 +1,5 @@
 import { formatTime } from '@/utils'
+import store from '@/store'
 
 const filters = {
   HMSTimeFilter(val) {
@@ -9,6 +10,15 @@ const filters = {
   },
   allTimeFilter(val) {
     return formatTime(val, 'all')
+  },
+  postTypeFilter(val) {
+    console.log(val)
+    if (!val) return
+
+    let postTypes = store.state.propList.filter(ele => ele.type === 'post')
+
+    let active = postTypes.find(ele => ele.value === val)
+    return active ? active.title : ''
   }
 }
 

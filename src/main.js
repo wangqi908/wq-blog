@@ -7,6 +7,9 @@ import { components } from '@/components'
 import filters from '@/utils/filters'
 import { Button, Input, Select, Option, Form, FormItem, Image } from 'element-ui'
 
+store.commit('setPropList', [])
+store.dispatch('getPropListAction', {})
+
 Vue.use(Button)
 Vue.use(Input)
 Vue.use(Select)

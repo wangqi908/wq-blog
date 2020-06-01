@@ -4,7 +4,10 @@
       <img class="post-pic" :src="info.http+info.banner" alt="博客" />
     </router-link>
     <div class="content">
-      <div class="time">{{info.createTime|allTimeFilter}}</div>
+      <div class="time">
+        <span>{{info.createTime|allTimeFilter}}</span>
+        <span>{{info.type|postTypeFilter}}</span>
+      </div>
       <div class="title">
         <router-link :to="{ name:'post-view', params:{id:info._id}}">{{info.title}}</router-link>
       </div>
@@ -23,9 +26,6 @@ export default {
     info: {
       type: Object
     }
-  },
-  created() {
-    console.log(this.info)
   }
 }
 </script>
@@ -49,6 +49,9 @@ export default {
   .time {
     margin: 10px 0;
     font-size: 12px;
+    span {
+      margin-right: 10px;
+    }
   }
   .title {
     font-size: 16px;

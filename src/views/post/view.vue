@@ -4,11 +4,11 @@
     <div class="post-bar">
       <div>
         <span>时间</span>
-        <span>{{createTime}}</span>
+        <span>{{createTime|allTimeFilter}}</span>
       </div>
       <div>
         <span>类型</span>
-        <span>{{type}}</span>
+        <span>{{type|postTypeFilter}}</span>
       </div>
     </div>
     <Viewer :initialValue="content" height="500px" v-if="content" />
