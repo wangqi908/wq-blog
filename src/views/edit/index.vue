@@ -10,36 +10,41 @@
           <el-option label="随笔" value="2"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="内容" prop="contnet">
-        <WangEdit v-model="ruleForm.contnet" />
+      <el-form-item label="摘要">
+        <el-input type="textarea" :rows="2" v-model="ruleForm.intro"></el-input>
+      </el-form-item>
+      <el-form-item label="封面">
+        <Upload v-model="fileList"></Upload>
+      </el-form-item>
+      <el-form-item label="内容" prop="content" class="no-line-higth">
+        <MarkdownEditor v-model="ruleForm.content" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
+        <el-button type="primary" @click="submitForm('ruleForm')">发布</el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script>
-import { WangEdit } from '@c'
+import { MarkdownEditor, Upload } from '@c'
+import { postAddReq } from '@api'
 export default {
   name: 'Edit',
-  components: { WangEdit },
+  components: { MarkdownEditor, Upload },
   data() {
     return {
+      fileList: [],
       ruleForm: {
         title: '',
         type: '',
-        contnet: ''
+        intro: '',
+        content: ''
       },
       rules: {
-        title: [
-          { required: true, message: '请输入名称', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 2 到 5 个字符', trigger: 'blur' }
-        ],
+        title: [{ required: true, message: '请输入名称', trigger: 'blur' }],
         type: [{ required: true, message: '请选择种类', trigger: 'change' }],
-        contnet: [{ required: true, message: '请输入内容', trigger: 'change' }]
+        content: [{ required: true, message: '请输入内容', trigger: 'change' }]
       }
     }
   },
@@ -47,7 +52,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert('submit!')
+          this.submit()
           console.log(JSON.stringify(this.ruleForm))
         } else {
           console.log('error submit!!')
@@ -55,21 +60,33 @@ export default {
         }
       })
     },
-    resetForm(formName) {
-      this.$refs[formName].resetFields()
+    async submit() {
+      let { ruleForm: sendData, fileList } = this
+      if (fileList.length) {
+        sendData.banner = fileList[0].url
+      }
+
+      // eslint-disable-next-line no-unreachable
+      const res = await postAddReq(sendData)
+      console.log(res)
     }
   },
   watch: {
-    'ruleForm.contnet'() {
-      this.$refs.ruleForm.validateField('contnet')
+    'ruleForm.content'() {
+      this.$refs.ruleForm.validateField('content')
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang='scss'>
 .edit-page {
   background-color: #fff;
   padding: 20px;
+  .no-line-higth {
+    .el-form-item__content {
+      line-height: 0;
+    }
+  }
 }
 </style>

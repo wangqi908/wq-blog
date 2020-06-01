@@ -1,13 +1,17 @@
 <template>
   <Card class="item">
-    <a href="https://github.com/wangqi908" class="pic">
-      <img class="post-pic" src="@a/imgs/pic.png" alt="博客" />
-    </a>
+    <router-link class="pic" :to="{ name:'post-view', params:{id:info._id}}" v-if="info.banner">
+      <img class="post-pic" :src="info.http+info.banner" alt="博客" />
+    </router-link>
     <div class="content">
-      <div class="time">{{info.createTime}}</div>
-      <a href="https://github.com/wangqi908" class="title">{{info.title}}</a>
-      <div class="intro" v-html="info.content"></div>
-      <a href="https://github.com/wangqi908" class="btn">阅读全文</a>
+      <div class="time">{{info.createTime|allTimeFilter}}</div>
+      <div class="title">
+        <router-link :to="{ name:'post-view', params:{id:info._id}}">{{info.title}}</router-link>
+      </div>
+
+      <div class="intro" v-if="info.intro">{{info.intro}}</div>
+
+      <router-link class="btn" :to="{ name:'post-view', params:{id:info._id}}">阅读全文</router-link>
     </div>
   </Card>
 </template>
@@ -49,6 +53,7 @@ export default {
   .title {
     font-size: 16px;
     color: $titleText;
+    margin-bottom: 20px;
   }
   .intro {
     font-size: 14px;

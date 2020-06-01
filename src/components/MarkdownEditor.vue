@@ -3,7 +3,7 @@
     :options="editorOptions"
     @change="onEditorChange"
     :initialValue="value"
-    height="600px"
+    height="400px"
     ref="toastuiEditor"
   />
 </template>
@@ -60,7 +60,8 @@ export default {
   methods: {
     onEditorChange() {
       let markdown = this.$refs.toastuiEditor.invoke('getMarkdown')
-      this.$emit('input', JSON.stringify(markdown))
+      // this.$emit('input', JSON.stringify(markdown))
+      this.$emit('input', markdown)
     }
   }
 }

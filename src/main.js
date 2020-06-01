@@ -4,7 +4,8 @@ import router from './router'
 import store from './store'
 import '@/assets/style/index.scss'
 import { components } from '@/components'
-import { Button, Input, Select, Option, Form, FormItem } from 'element-ui'
+import filters from '@/utils/filters'
+import { Button, Input, Select, Option, Form, FormItem, Image } from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Input)
@@ -12,7 +13,11 @@ Vue.use(Select)
 Vue.use(Option)
 Vue.use(Form)
 Vue.use(FormItem)
+Vue.use(Image)
+
 Vue.use(components)
+Vue.use(filters)
+
 Vue.config.productionTip = false
 
 new Vue({

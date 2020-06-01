@@ -3,7 +3,7 @@ export { default as Foot } from './foot'
 export { default as Person } from './person'
 export { default as Recent } from './recent'
 export { default as PostList } from './postList'
-export const WangEdit = () => import(/* webpackChunkName: "WangEdit" */ './WangEdit')
+export { default as Upload } from './Upload'
 export const MarkdownEditor = () => import(/* webpackChunkName: "MarkdownEditor" */ './MarkdownEditor')
 
 import Card from './Card'
