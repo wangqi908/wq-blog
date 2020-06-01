@@ -19,7 +19,7 @@ export default {
   methods: {
     async getPageInfo() {
       let data = {
-        pageSize: 3,
+        pageSize: 13,
         pageNum: 0,
         data: {}
       }

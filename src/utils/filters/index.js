@@ -12,7 +12,6 @@ const filters = {
     return formatTime(val, 'all')
   },
   postTypeFilter(val) {
-    console.log(val)
     if (!val) return
 
     let postTypes = store.state.propList.filter(ele => ele.type === 'post')

@@ -1,9 +1,9 @@
 <template>
-  <div class="wrapper">
+  <div class="layout">
     <Head class="header" />
-    <div class="layout section">
+    <section class="main-content">
       <router-view />
-    </div>
+    </section>
     <Foot class="footer" />
   </div>
 </template>
@@ -18,28 +18,28 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.wrapper {
+.layout {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  padding-top: 60px;
   background-color: $bgc;
-  min-height: 100%;
 }
+
 .header {
-  flex: 0;
+  flex: 0 0 auto;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;
-}
-.section {
-  flex: 1;
-}
-.footer {
-  flex: 0;
 }
 
-.layout {
-  padding-top: 60px;
+.main-content {
   @extend %page-common;
+  flex: 1 0 auto;
+  background-color: $bgc;
+}
+
+.footer {
+  flex: 0 0 auto;
 }
 </style>
