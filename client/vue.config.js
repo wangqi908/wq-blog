@@ -5,7 +5,10 @@ function resolve(dir) {
 }
 
 const cdn = {
-  css: [],
+  css: [
+    'https://cdn.bootcss.com/github-markdown-css/2.8.0/github-markdown.min.css',
+    'https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css'
+  ],
   js: [
     'https://cdn.bootcss.com/vue/2.6.10/vue.js',
     'https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js',

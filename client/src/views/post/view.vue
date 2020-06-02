@@ -11,14 +11,16 @@
         <span>{{type|postTypeFilter}}</span>
       </div>
     </div>
-    <div>{{content}}</div>
+    <div v-html="content" class="markdown-body"></div>
   </div>
 </template>
 
 <script>
 import { postViewReq } from '@api'
+// import '@a/style/hljs.css'
 
 export default {
+  components: {},
   data() {
     return {
       content: '',
@@ -44,7 +46,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss' >
 .post-view {
   background-color: #fff;
   margin-bottom: 20px;
@@ -63,5 +65,16 @@ export default {
       }
     }
   }
+}
+
+pre {
+  display: block;
+  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 1em;
+  // color: #b4bbc9;
+  // background: #292c34;
+  border-radius: 4px;
+  box-shadow: $shadow;
 }
 </style>
