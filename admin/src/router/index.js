@@ -23,8 +23,26 @@ const routes = [
       {
         path: '/post',
         name: 'post',
-        component: () => import(/* webpackChunkName: "edit" */ '../views/post'),
+        component: () => import(/* webpackChunkName: "post" */ '../views/post'),
         meta: { requireAuth: true, title: '文章' }
+      },
+      {
+        path: '/post/add',
+        name: 'post-add',
+        component: () => import(/* webpackChunkName: "post-add" */ '../views/post/add'),
+        meta: { requireAuth: true, title: '文章添加', modules: 'post' }
+      },
+      {
+        path: '/post/view/:id?',
+        name: 'post-view',
+        component: () => import(/* webpackChunkName: "post-view" */ '../views/post/view'),
+        meta: { requireAuth: true, title: '文章详情', modules: 'post' }
+      },
+      {
+        path: '/post/edit/:id?',
+        name: 'post-edit',
+        component: () => import(/* webpackChunkName: "post-edit" */ '../views/post/edit'),
+        meta: { requireAuth: true, title: '文章修改', modules: 'post' }
       }
     ]
   }

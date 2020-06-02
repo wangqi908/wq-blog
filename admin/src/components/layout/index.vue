@@ -62,7 +62,7 @@ body {
 .aside {
   overflow: auto;
   padding-top: 10px;
-  width: 160px;
+  width: 200px;
 }
 .main {
   overflow: auto;

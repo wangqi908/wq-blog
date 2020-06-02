@@ -67,3 +67,34 @@ export const uniqueArr = (arr, id = 'id') => {
     return hasId ? prev : [...prev, cur]
   }, [])
 }
+
+// 重置对象里的键为空
+export const searchReset = (searchData = {}) => {
+  let type = o => {
+    var s = Object.prototype.toString.call(o)
+    return s.match(/\[object (.*?)\]/)[1].toLowerCase()
+    /* 
+    type({}); // "object"
+    type([]); // "array"
+    type(5); // "number"
+    type(null); // "null"
+    type(); // "undefined"
+    type(/abcd/); // "regex"
+    type(new Date()); // "date"
+    */
+  }
+  for (const key in searchData) {
+    const element = searchData[key]
+    let elementType = type(element)
+    if (elementType === 'object') {
+      searchData[key] = {}
+    } else if (elementType === 'array') {
+      searchData[key] = []
+    } else if (elementType === 'null') {
+      searchData[key] = null
+    } else {
+      searchData[key] = ''
+    }
+  }
+  return searchData
+}

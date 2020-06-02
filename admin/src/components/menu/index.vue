@@ -21,12 +21,12 @@ export default {
     }
   },
   created() {
-    this.activeIndex = this.$route.name
+    this.activeIndex = this.$route.meta.modules || this.$route.name
   },
 
   watch: {
     $route() {
-      this.activeIndex = this.$route.name
+      this.activeIndex = this.$route.meta.modules || this.$route.name
     }
   }
 }
