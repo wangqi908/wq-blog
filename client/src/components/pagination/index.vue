@@ -3,18 +3,18 @@
     <ul class="page-btn-box">
       <li
         @click="prevOrNext(-1)"
-        :class="['option-btn btn-common',currentPage===1?'disabled':'']"
+        :class="['option-btn btn-common',myCurrentPage===1?'disabled':'']"
       >上一页</li>
       <li
         v-for="(item, index) in pages"
         :key="index"
-        :class="['num-btn','btn-common',item === currentPage?'active':'',item==='...'?'li-box':'']"
+        :class="['num-btn','btn-common',item === myCurrentPage?'active':'',item==='...'?'li-box':'']"
         @click="select(item)"
       >{{item}}</li>
-      <li class="current li-box">{{currentPage}}</li>
+      <li class="current li-box">{{myCurrentPage}}</li>
       <li
         @click="prevOrNext(1)"
-        :class="['option-btn btn-common',currentPage===totalPages?'disabled':'']"
+        :class="['option-btn btn-common',myCurrentPage===totalPages?'disabled':'']"
       >下一页</li>
     </ul>
   </div>
@@ -22,23 +22,36 @@
 
 <script>
 export default {
+  props: {
+    total: {
+      type: [String, Number],
+      required: true
+    },
+    pageSize: {
+      type: [String, Number],
+      required: true
+    },
+    currentPage: {
+      type: [String, Number],
+      required: true
+    }
+  },
   data() {
     return {
-      currentPage: 1,
-      totalPages: 22
+      myCurrentPage: this.currentPage
     }
   },
   methods: {
     select(item) {
-      this.currentPage = item
+      this.myCurrentPage = item
     },
     prevOrNext(n) {
-      this.currentPage += n
+      this.myCurrentPage += n
 
-      this.currentPage < 1
-        ? (this.currentPage = 1)
-        : this.currentPage > this.totalPages
-        ? (this.currentPage = this.totalPages)
+      this.myCurrentPage < 1
+        ? (this.myCurrentPage = 1)
+        : this.myCurrentPage > this.totalPages
+        ? (this.myCurrentPage = this.totalPages)
         : null
     },
     change(type) {
@@ -57,23 +70,32 @@ export default {
     }
   },
   computed: {
+    totalPages() {
+      let { total, pageSize } = this
+      return Math.ceil(total / pageSize)
+    },
     pages() {
-      const c = this.currentPage
+      const c = this.myCurrentPage
 
       const t = this.totalPages
-      if (t <= 6) {
+      if (t <= 4) {
         let arr = []
         for (let index = 0; index < t; index++) {
           arr.push(index + 1)
         }
         return arr
-      } else if (c <= 5) {
-        return [1, 2, 3, 4, 5, 6, '...', t] //第一种情况
+      } else if (c <= 4) {
+        return [1, 2, 3, 4, '...', t] //第一种情况
       } else if (c >= t - 4) {
         return [1, '...', t - 5, t - 4, t - 3, t - 2, t - 1, t] //第二种情况
       } else {
         return [1, '...', c - 2, c - 1, c, c + 1, c + 2, '...', t] //第三种情况
       }
+    }
+  },
+  watch: {
+    myCurrentPage(val) {
+      this.$emit('update:currentPage', val)
     }
   }
 }

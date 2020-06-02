@@ -1,7 +1,12 @@
 .pagination {
-  border: 1px solid #ccc;
   display: flex;
   font-size: 14px;
+  margin-bottom: 10px;
+
+  .page-btn-box {
+    flex-wrap: wrap;
+    display: flex;
+  }
   .option-btn {
     width: 60px;
     height: 30px;
@@ -38,9 +43,6 @@
       background-color: $activeActive;
       color: #fff;
     }
-  }
-  .page-btn-box {
-    display: flex;
   }
   .disabled {
     background-color: #ccc;
@@ -83,10 +85,19 @@
   }
 }
 @media (max-width: $small-width) {
-  .pagination .num-btn {
-    display: none;
-  }
-  .pagination .current {
-    display: block;
+  .pagination {
+    .page-btn-box {
+      justify-content: space-between;
+      width: 100%;
+    }
+    .num-btn {
+      display: none;
+    }
+    .current {
+      display: block;
+    }
+    .option-btn {
+      flex: 1;
+    }
   }
 }

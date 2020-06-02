@@ -1,19 +1,22 @@
 <template>
   <div>
     <PostItem v-for="item in list" :key="item._id" :info="item" />
+    <Pagination :total="222" :pageSize="10" :currentPage.sync="currentPage" />
   </div>
 </template>
 
 <script>
 import { postPageReq } from '@api'
 import PostItem from './PostItem'
+import Pagination from '../pagination'
 export default {
   name: 'postList',
-  components: { PostItem },
+  components: { PostItem, Pagination },
   data() {
     return {
       list: [],
-      count: ''
+      count: '',
+      currentPage: 2
     }
   },
   methods: {
