@@ -10,11 +10,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "test" */ '../views/test')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/login')
-  },
-  {
     path: '/',
     name: 'layout',
     redirect: '/index',
@@ -37,12 +32,6 @@ const routes = [
         name: 'post-view',
         component: () => import(/* webpackChunkName: "post-view" */ '../views/post/view'),
         meta: { title: '详情' }
-      },
-      {
-        path: '/edit',
-        name: 'edit',
-        component: () => import(/* webpackChunkName: "edit" */ '../views/edit'),
-        meta: { requireAuth: true, title: '发布文章' }
       },
       {
         path: '/about',

@@ -5,7 +5,7 @@
 import axios from 'axios'
 import store from '@/store'
 const { PROD_URL } = require('../../config')
-export const baseURL = process.env.NODE_ENV === 'development' ? '/api' : `${PROD_URL}api/`
+export const baseURL = process.env.NODE_ENV === 'development' ? '/blog' : `${PROD_URL}blog/`
 
 export const timeout = 20000 // 设置超时时间
 

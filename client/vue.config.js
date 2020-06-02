@@ -25,7 +25,7 @@ module.exports = {
     port: 8889, // 端口
     open: true,
     proxy: {
-      '/api': {
+      '/blog': {
         target: PROD_URL,
         changeOrigin: true
       }

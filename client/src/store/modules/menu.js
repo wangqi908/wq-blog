@@ -14,11 +14,6 @@ export default {
       },
       {
         id: 2,
-        title: '写文章',
-        path: '/edit'
-      },
-      {
-        id: 3,
         title: '关于',
         path: '/about'
       }

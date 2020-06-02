@@ -5,18 +5,9 @@ import store from './store'
 import '@/assets/style/index.scss'
 import { components } from '@/components'
 import filters from '@/utils/filters'
-import { Button, Input, Select, Option, Form, FormItem, Image } from 'element-ui'
 
 store.commit('setPropList', [])
 store.dispatch('getPropListAction', {})
-
-Vue.use(Button)
-Vue.use(Input)
-Vue.use(Select)
-Vue.use(Option)
-Vue.use(Form)
-Vue.use(FormItem)
-Vue.use(Image)
 
 Vue.use(components)
 Vue.use(filters)

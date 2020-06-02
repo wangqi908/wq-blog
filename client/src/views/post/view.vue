@@ -11,20 +11,14 @@
         <span>{{type|postTypeFilter}}</span>
       </div>
     </div>
-    <Viewer :initialValue="content" height="500px" v-if="content" />
+    <div>{{content}}</div>
   </div>
 </template>
 
 <script>
 import { postViewReq } from '@api'
 
-import '@toast-ui/editor/dist/toastui-editor-viewer.css'
-
-import { Viewer } from '@toast-ui/vue-editor'
 export default {
-  components: {
-    Viewer
-  },
   data() {
     return {
       content: '',
