@@ -20,9 +20,8 @@ const edit = (req, res) => {
 
     let banner = newInfo.banner
 
-    let isChange = banner.split('/')[0] !== 'files' //是否需要更换图片
+    let isChange = banner && banner.split('/')[0] !== 'files' //是否需要更换图片
 
-    console.log(isChange, banner.split('/')[0])
     // 如果之前有图片,且需要更换图片 先删除之前的图片 然后更换图片新路径
     if (banner && postInfo.banner && isChange) {
       unlinkFile(postInfo.banner)
@@ -31,6 +30,12 @@ const edit = (req, res) => {
     if (newInfo.banner && isChange) {
       const newBannerPath = await remove(newInfo.banner)
       newInfo.banner = newBannerPath
+    }
+
+    // 不传图片,视为删除图片
+    if (!banner) {
+      unlinkFile(postInfo.banner)
+      newInfo.banner = ''
     }
 
     PostSchema.updateOne({ _id }, newInfo, (err, doc) => {
