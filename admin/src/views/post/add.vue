@@ -81,14 +81,6 @@ export default {
 }
 </script>
 
-<style lang='scss'>
-.edit-page {
-  background-color: #fff;
-  padding: 20px;
-  .no-line-higth {
-    .el-form-item__content {
-      line-height: 0;
-    }
-  }
-}
+<style lang='scss' >
+@import './style.scss';
 </style>

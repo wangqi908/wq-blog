@@ -29,3 +29,5 @@ export const propListReq = params => req('/sys/prop/list', params, 'post') //pro
 export const postPageReq = params => req('/post/page', params, 'post') //文章分页
 export const postAddReq = params => req('/post/add', params, 'post') //文章添加
 export const postViewReq = params => req('/post/view', params, 'post') //文章详情
+export const postEditReq = params => req('/post/edit', params, 'post') //编辑
+export const postRemoveReq = params => req('/post/remove', params, 'post') //删除

@@ -1,0 +1,9 @@
+.edit-page {
+  background-color: #fff;
+  padding: 20px;
+  .no-line-higth {
+    .el-form-item__content {
+      line-height: 0;
+    }
+  }
+}

@@ -3,7 +3,7 @@
     :options="editorOptions"
     @change="onEditorChange"
     :initialValue="value"
-    height="400px"
+    height="800px"
     ref="toastuiEditor"
   />
 </template>

@@ -12,6 +12,7 @@
       </div>
     </div>
     <Viewer :initialValue="content" height="500px" v-if="content" />
+    <!-- <div v-html="content"></div> -->
   </div>
 </template>
 
@@ -36,7 +37,7 @@ export default {
   methods: {
     async getInfo() {
       let _id = this.$route.params.id
-      const res = await postViewReq({ _id })
+      const res = await postViewReq({ _id, isMd: true })
       let { content, createTime, title, type } = res.data.data
       this.content = content
       this.createTime = createTime

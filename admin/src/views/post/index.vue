@@ -51,7 +51,7 @@
 
     <DelDialog
       :visible.sync="showDialog"
-      :req="userRemoveReq"
+      :req="postRemoveReq"
       :ids="multipleSelection"
       v-if="showDialog&&!currentCom"
       @before-close="handleClose"
@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { postPageReq, userRemoveReq } from '@api'
+import { postPageReq, postRemoveReq } from '@api'
 import pageMixin from '@/mixin/pageMixin'
 export default {
   mixins: [pageMixin],
@@ -68,7 +68,7 @@ export default {
   data() {
     return {
       searchData: {},
-      userRemoveReq
+      postRemoveReq
     }
   },
   methods: {
@@ -85,7 +85,7 @@ export default {
     // 修改
     change(row) {
       this.activeId = row._id
-      this.$router.push({ name: 'post-edit' })
+      this.$router.push({ name: 'post-edit', params: { id: row._id } })
     },
 
     //请求表格数据
