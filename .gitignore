@@ -3,6 +3,7 @@
 /admin/package-lock.json
 /client/node_modules
 /client/blog-client
+/client/blog
 /client/package-lock.json
 /server/node_modules
 /server/public/temp_files
