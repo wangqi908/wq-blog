@@ -17,7 +17,6 @@
 
 <script>
 import { postViewReq } from '@api'
-// import '@a/style/hljs.css'
 
 export default {
   components: {},
@@ -72,9 +71,7 @@ pre {
   overflow-y: hidden;
   overflow-x: auto;
   padding: 1em;
-  // color: #b4bbc9;
-  // background: #292c34;
-  border-radius: 4px;
+  border-radius: 6px !important;
   box-shadow: $shadow;
 }
 </style>

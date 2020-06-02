@@ -52,15 +52,7 @@ export default {
     padding: 6px;
     margin: 10px 0;
     border-radius: 20px;
-    background-color: $active;
-    transition: all 0.4s;
-    color: #fff;
-    &:hover {
-      background-color: $activeHover;
-    }
-    &:active {
-      background-color: $activeActive;
-    }
+    @extend %blue-btn;
   }
 }
 </style>

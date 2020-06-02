@@ -2,8 +2,11 @@
   <div class="layout">
     <Head class="header" />
     <section class="main-content">
-      <router-view />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
     </section>
+
     <Foot class="footer" />
   </div>
 </template>
