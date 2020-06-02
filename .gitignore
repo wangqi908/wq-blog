@@ -1,23 +1,11 @@
-.DS_Store
-node_modules
-/dist
-/blog
+/admin/node_modules
+/admin/blog-admin
+/admin/package-lock.json
+/client/node_modules
+/client/blog-client
+/client/package-lock.json
+/server/node_modules
+/server/public/temp_files
+/server/public/files
+/server/package-lock.json
 
-# local env files
-.env.local
-.env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
