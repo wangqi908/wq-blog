@@ -1,7 +1,13 @@
 <template>
   <div>
     <PostItem v-for="item in list" :key="item._id" :info="item" />
-    <Pagination :total="222" :pageSize="10" :currentPage.sync="currentPage" />
+
+    <Pagination
+      :total="count"
+      :pageSize="pageSize"
+      :currentPage.sync="currentPage"
+      @current-change="currentChange"
+    />
   </div>
 </template>
 
@@ -16,14 +22,16 @@ export default {
     return {
       list: [],
       count: '',
-      currentPage: 2
+      currentPage: 1,
+      pageSize: 3
     }
   },
   methods: {
     async getPageInfo() {
+      let { currentPage, pageSize } = this
       let data = {
-        pageSize: 13,
-        pageNum: 0,
+        pageSize,
+        pageNum: currentPage - 1,
         data: {}
       }
       const res = await postPageReq(data)
@@ -31,6 +39,9 @@ export default {
       let { list, count } = res.data.data
       this.list = list
       this.count = count
+    },
+    currentChange() {
+      this.getPageInfo()
     }
   },
   created() {

@@ -25,7 +25,7 @@ module.exports = {
   assetsDir: 'static',
   productionSourceMap: false,
   devServer: {
-    port: 8889, // 端口
+    port: 8089,
     open: true,
     proxy: {
       '/blog': {

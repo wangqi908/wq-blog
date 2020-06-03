@@ -1,5 +1,5 @@
 <template>
-  <Card class="item">
+  <div class="item">
     <router-link class="pic" :to="{ name:'post-view', params:{id:info._id}}" v-if="info.banner">
       <img class="post-pic" :src="info.http+info.banner" alt="博客" />
     </router-link>
@@ -16,7 +16,7 @@
 
       <router-link class="btn" :to="{ name:'post-view', params:{id:info._id}}">阅读全文</router-link>
     </div>
-  </Card>
+  </div>
 </template>
 
 <script>
@@ -36,6 +36,8 @@ export default {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: $shadow;
   .pic {
     width: 100%;
     img {

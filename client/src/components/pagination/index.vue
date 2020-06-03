@@ -96,6 +96,7 @@ export default {
   watch: {
     myCurrentPage(val) {
       this.$emit('update:currentPage', val)
+      this.$emit('current-change', val)
     }
   }
 }
