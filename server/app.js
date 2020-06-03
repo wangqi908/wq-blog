@@ -51,6 +51,7 @@ app.use((req, res, next) => {
     '/blog/register',
     '/blog/upload',
     '/blog/post/page',
+    '/blog/post/view',
     '/blog/sys/prop/list',
     '/blog/sys/prop/view'
   ] //不需要验证token的接口地址
