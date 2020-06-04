@@ -1,22 +1,19 @@
 <template>
   <div>
     <p>aa</p>
+    <button @click="show">提示</button>
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    show() {
+      this.$toast({ msg: '成功成功成功' })
+    }
+  },
   mounted() {
-    // this.$toast({
-    //   type: 'success',
-    //   msg: '成功',
-    //   duration: 3
-    // })
-    console.log(this.$loading)
-    this.$loading.show()
-    setTimeout(() => {
-      this.$loading.hide()
-    }, 5000)
+    // this.$toast.show()
   }
 }
 </script>

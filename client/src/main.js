@@ -5,8 +5,8 @@ import store from './store'
 import '@/assets/style/index.scss'
 import { components } from '@/components'
 import filters from '@/utils/filters'
-import Toast from './plugins/toast'
-import Loading from './plugins/loading'
+import Toast from './plugins/toast/index.js'
+import Loading from './plugins/loading/index.js'
 store.commit('setPropList', [])
 store.dispatch('getPropListAction', {})
 
