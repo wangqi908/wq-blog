@@ -29,12 +29,6 @@ const routes = [
         name: 'post-view',
         component: () => import(/* webpackChunkName: "post-view" */ '../views/post/view'),
         meta: { title: '详情' }
-      },
-      {
-        path: '/about',
-        name: 'about',
-        component: () => import(/* webpackChunkName: "about" */ '../views/about'),
-        meta: { title: '关于' }
       }
     ]
   },
@@ -54,6 +48,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

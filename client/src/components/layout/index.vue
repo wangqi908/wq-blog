@@ -3,7 +3,9 @@
     <Head class="header" />
     <section class="main-content">
       <transition name="fade" mode="out-in">
-        <router-view />
+        <keep-alive include="post,home">
+          <router-view />
+        </keep-alive>
       </transition>
     </section>
 

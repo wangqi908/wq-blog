@@ -9,6 +9,11 @@ export default {
   name: 'post',
   mixins: [metaInfo],
   components: { PostList },
+  data() {
+    return {
+      num: 0
+    }
+  },
   created() {
     this.initData()
   },
