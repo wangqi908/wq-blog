@@ -72,7 +72,7 @@ export default function req(url, params = {}, method = 'GET', arr) {
   } else if (method == 'all') {
     return axios.all(arr)
   } else {
-    console.error('未知的method' + method)
+    // console.error('未知的method' + method)
     return false
   }
 }

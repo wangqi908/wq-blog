@@ -18,7 +18,7 @@ export default {
     return {
       meta: {
         title: '',
-        description: '这是一篇文章...',
+        description: '',
         keywords: ''
       }
     }

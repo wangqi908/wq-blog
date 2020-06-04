@@ -1,4 +1,6 @@
 'use strict'
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 const path = require('path')
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -17,6 +19,7 @@ const cdn = {
   ]
 }
 const { BASE_DIR, PROD_URL } = require('./config')
+const IS_PROD = process.env.NODE_ENV === 'production'
 // const publicPath = process.env.NODE_ENV === 'production' ? `/${BASE_DIR}` : '/'
 
 module.exports = {
@@ -34,15 +37,35 @@ module.exports = {
       }
     }
   },
-  configureWebpack: {
+  configureWebpack: config => {
     // 公用代码提取，使用cdn加载
     // 用cdn方式引入
-    externals: {
+    config.externals = {
       vue: 'Vue',
       vuex: 'Vuex',
       'vue-router': 'VueRouter',
       axios: 'axios'
     }
+
+    const plugins = []
+
+    if (IS_PROD) {
+      plugins.push(
+        new PrerenderSPAPlugin({
+          staticDir: path.join(__dirname, 'blog'),
+          routes: ['/', '/index', '/post', '/post/view'],
+          renderer: new Renderer({
+            inject: {
+              foo: 'bar'
+            },
+            headless: false,
+            // 在 main.js 中 document.dispatchEvent(new Event('render-event'))，两者的事件名称要对应上。
+            renderAfterDocumentEvent: 'render-event'
+          })
+        })
+      )
+    }
+    config.plugins = [...config.plugins, ...plugins]
   },
   chainWebpack: config => {
     config.plugins.delete('preload') // 移除 prefetch 插件
