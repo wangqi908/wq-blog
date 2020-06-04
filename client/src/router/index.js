@@ -1,7 +1,4 @@
-// import Vue from "vue";
 import VueRouter from 'vue-router'
-
-// Vue.use(VueRouter);
 
 const routes = [
   {
@@ -58,6 +55,11 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || '王琦的博客'
+  next()
 })
 
 export default router

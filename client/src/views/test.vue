@@ -13,7 +13,7 @@ export default {
     }
   },
   mounted() {
-    // this.$toast.show()
+    // this.$loading.show()
   }
 }
 </script>

@@ -1,7 +1,4 @@
-/*
-使用axios 封装的ajax 请求函数
-函数返回的是promise 对象
-*/
+import Vue from 'vue'
 import axios from 'axios'
 import store from '@/store'
 const { PROD_URL } = require('../../config')
@@ -14,20 +11,24 @@ axios.defaults.timeout = timeout
 
 axios.interceptors.request.use(
   config => {
+    Vue.prototype.$loading.show()
     const token = store.state.token
     if (token) config.headers.Authorization = `Bearer ${token}`
     return config
   },
   error => {
+    Vue.prototype.$loading.hide()
     return Promise.reject(error)
   }
 )
 
 axios.interceptors.response.use(
   response => {
+    Vue.prototype.$loading.hide()
     return response
   },
   error => {
+    Vue.prototype.$loading.hide()
     return Promise.reject(error)
   }
 )
