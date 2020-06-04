@@ -3,12 +3,23 @@
 </template>
 
 <script>
+import metaInfo from '@/mixin/metaInfo'
 import { PostList } from '@c'
 export default {
   name: 'post',
-  components: { PostList }
+  mixins: [metaInfo],
+  components: { PostList },
+  created() {
+    this.initData()
+  },
+  methods: {
+    initData() {
+      setInterval(() => {
+        this.meta.title = '王琦的博客-文章'
+        this.meta.description = '王琦的博客-文章'
+        this.meta.keywords = '王琦的博客-文章'
+      }, 100)
+    }
+  }
 }
 </script>
-
-<style>
-</style>

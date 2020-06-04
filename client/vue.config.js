@@ -17,10 +17,10 @@ const cdn = {
   ]
 }
 const { BASE_DIR, PROD_URL } = require('./config')
-const publicPath = process.env.NODE_ENV === 'production' ? `/${BASE_DIR}` : '/'
+// const publicPath = process.env.NODE_ENV === 'production' ? `/${BASE_DIR}` : '/'
 
 module.exports = {
-  publicPath,
+  publicPath: '/',
   outputDir: BASE_DIR,
   assetsDir: 'static',
   productionSourceMap: false,
@@ -56,7 +56,7 @@ module.exports = {
     // 生产环境注入cdn
     config.plugin('html').tap(args => {
       args[0].cdn = cdn
-      args[0].title = '王琦的blog'
+      args[0].title = '王琦的博客'
       return args
     })
   },

@@ -1,19 +1,13 @@
 <template>
   <div>
-    <p>aa</p>
-    <button @click="show">提示</button>
+    <h1>aaaa</h1>
   </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    show() {
-      this.$toast({ msg: '成功成功成功' })
-    }
-  },
-  mounted() {
-    // this.$loading.show()
-  }
+  name: 'post',
+  created() {},
+  methods: {}
 }
 </script>

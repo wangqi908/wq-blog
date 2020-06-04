@@ -16,10 +16,10 @@
 </template>
 
 <script>
+import metaInfo from '@/mixin/metaInfo'
 import { postViewReq } from '@api'
-
 export default {
-  components: {},
+  mixins: [metaInfo],
   data() {
     return {
       content: '',
@@ -32,11 +32,14 @@ export default {
     async getInfo() {
       let _id = this.$route.params.id
       const res = await postViewReq({ _id })
-      let { content, createTime, title, type } = res.data.data
+      let { content, createTime, title, type, intro } = res.data.data
       this.content = content
       this.createTime = createTime
       this.title = title
       this.type = type
+      this.meta.title = title
+      this.meta.description = intro || '技术文章'
+      this.meta.keywords = intro || '技术文章'
     }
   },
   created() {

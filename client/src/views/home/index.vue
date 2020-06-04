@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import metaInfo from '@/mixin/metaInfo'
 import { mapMutations } from 'vuex'
 import { PostList } from '@c'
 import { LeftSide, RightSide } from './components'
@@ -16,6 +17,7 @@ import { throttle } from '@u'
 
 export default {
   name: 'home',
+  mixins: [metaInfo],
   components: { LeftSide, RightSide, PostList },
   data() {
     return {
@@ -40,6 +42,9 @@ export default {
   },
   mounted() {
     this.handleClientWidth()
+    this.meta.title = '王琦的博客'
+    this.meta.description = '王琦的博客'
+    this.meta.keywords = '王琦的博客'
   }
 }
 </script>
