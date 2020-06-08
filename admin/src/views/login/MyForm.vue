@@ -27,7 +27,6 @@
 
       <el-form-item class="footer">
         <el-button type="primary" @click="submitForm('ruleForm')" :loading="loading">登录</el-button>
-        <el-button @click="$router.push('/register')">注册</el-button>
       </el-form-item>
     </el-form>
   </div>

@@ -5,10 +5,7 @@
         <el-input v-model="ruleForm.title"></el-input>
       </el-form-item>
       <el-form-item label="种类" prop="type">
-        <el-select v-model="ruleForm.type" placeholder="请选择种类">
-          <el-option label="技术" value="1"></el-option>
-          <el-option label="随笔" value="2"></el-option>
-        </el-select>
+        <PostTypeSelect v-model="ruleForm.type" />
       </el-form-item>
       <el-form-item label="摘要">
         <el-input type="textarea" :rows="2" v-model="ruleForm.intro"></el-input>
@@ -32,10 +29,11 @@
 
 <script>
 import { MarkdownEditor } from '@c'
+import { PostTypeSelect } from './components'
 import { postEditReq, postViewReq } from '@api'
 export default {
   name: 'Edit',
-  components: { MarkdownEditor },
+  components: { MarkdownEditor, PostTypeSelect },
   data() {
     return {
       fileList: [],
