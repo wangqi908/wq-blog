@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations, mapActions } from 'vuex'
 import { loginReq } from '@api'
 import { Captcha } from '@c'
 import {
@@ -61,6 +61,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setToken']),
+    ...mapActions(['getPropListAction']),
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
@@ -78,12 +79,14 @@ export default {
       try {
         const res = await loginReq(sendData)
         this.loading = false
-        if (res.data.code === 200) {
-          let token = res.data.data.token
-          this.setToken(token)
+        if (res.data.code !== 200) return
+        let token = res.data.data.token
+        this.setToken(token)
+
+        this.getPropListAction().then(() => {
           let path = this.$route.query.re || '/'
           this.$router.push(path)
-        }
+        })
       } catch (err) {
         this.loading = false
       }
